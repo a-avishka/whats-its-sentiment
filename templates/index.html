@@ -2,23 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Food-App</title>
+    <title>What's its Sentiment</title>
+    <style>
+        body{
+            text-align: center;
+        }
+
+        #text{
+            width: 75%;
+            margin:auto;
+        }
+
+    </style>
 </head>
-    <h1>The Food App Data Science</h1>
+<body>
+    <h1>What's its Sentiment</h1>
     <div>
         <form method="POST" enctype=multipart/form-data action="/send_text/">
-            <p>Insert Image below</p>
-            <input type="text" name="text"/>
+            <p>Add a phrase or paragraph of any length</p>
+            <textarea name="text" rows="10" cols="50">
+            </textarea>
             <br>
             <br>
-            <input type="submit" value="Upload"/>
+            <input type="submit" value="Analyse"/>
         </form>
     </div>
     {% if text|length > 0  %}
         <div>
 
-            <h4>File was uploaded</h4>
-            <h4>{{ prediction }} File was uploaded</h4>
+            <h4>Successfully analysed text</h4>
+            <h4>You entered: </h4>
+            <p id="text">
+                {{ text }}
+            </p>
+
+<!--            {% if prediction < 0.5  %}-->
+<!--                <h4>The text has a Negative sentiment</h4>-->
+<!--            {% elif prediction > 0.5  %}-->
+<!--                <h4>The text has a Positive sentiment</h4>-->
+<!--            {% endif %}-->
+
+        <h4>The likelihood of the text being a positive sentiment is {{ prediction }}%</h4>
         </div>
     {% endif %}
 </body>

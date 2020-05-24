@@ -16,7 +16,7 @@ class Prediction:
 
         # make predicton
         sentiment = model.predict([[self.phrase]])
-
+        sentiment = round(((sentiment[0][0]) * 100), 2)
         print(sentiment)
 
         return sentiment
