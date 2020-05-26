@@ -1,5 +1,5 @@
 # Whats its Sentiment
-A simple intuitive web app where you can enter a phrase or an whole essay or article and check its sentiment. 
+A simple, easy to use and an intelligent web app where you can enter a phrase or an whole essay or article and check its sentiment. 
 
 [![Sentiment analyser](https://res.cloudinary.com/marcomontalbano/image/upload/v1590514582/video_to_markdown/images/google-drive--1ioypMLoffFv3l8M3hNoBYQCYuwrksKoV-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/open?id=1ioypMLoffFv3l8M3hNoBYQCYuwrksKoV "Sentiment analyser")
 
