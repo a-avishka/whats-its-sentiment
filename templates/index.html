@@ -7,6 +7,9 @@
         body{
             text-align: center;
         }
+        textarea{
+            text-align: left;
+        }
 
         #text{
             width: 75%;
@@ -20,8 +23,7 @@
     <div>
         <form method="POST" enctype=multipart/form-data action="/send_text/">
             <p>Add a phrase or paragraph of any length</p>
-            <textarea name="text" rows="10" cols="50">
-            </textarea>
+            <textarea name="text" rows="10" cols="50"></textarea>
             <br>
             <br>
             <input type="submit" value="Analyse"/>
@@ -35,14 +37,17 @@
             <p id="text">
                 {{ text }}
             </p>
-
-<!--            {% if prediction < 0.5  %}-->
-<!--                <h4>The text has a Negative sentiment</h4>-->
-<!--            {% elif prediction > 0.5  %}-->
-<!--                <h4>The text has a Positive sentiment</h4>-->
-<!--            {% endif %}-->
+            <br>
+            {% if prediction > 55  %}
+                <h2>Positive</h2>
+            {% elif prediction < 40  %}
+                <h2> Negative</h2>
+            {% else %}
+                <h2> Neutral</h2>
+            {% endif %}
 
         <h4>The likelihood of the text being a positive sentiment is {{ prediction }}%</h4>
+
         </div>
     {% endif %}
 </body>
